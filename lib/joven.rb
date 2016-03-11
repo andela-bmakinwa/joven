@@ -1,4 +1,5 @@
 require "joven/version"
+require "joven/utility"
 
 module Joven
   class Application
