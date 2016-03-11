@@ -10,7 +10,7 @@ module Joven
       return [500, {}, []] if path == "/favicon.ico"
       controller, action = get_controller_action(path, request_method)
       response = controller.new.send(action)
-      [200, {"Content-Type" => "text/html"}, [response]]
+      [200, { "Content-Type" => "text/html" }, [response]]
     end
 
     def get_controller_action(path, verb)
