@@ -39,4 +39,18 @@ describe "Utility Methods" do
       it { expect("PersonController".to_camel_case).to eq "PersonController" }
     end
   end
+
+  context "#to_constant" do
+    context "`Hash`" do
+      it { expect("Hash".to_constant).to eq Hash }
+    end
+ 
+    context "`String`" do
+      it { expect("String".to_constant).to eq String }
+    end
+ 
+    context "`Array`" do
+      it { expect("Array".to_constant).to eq Array }
+    end
+  end
 end
