@@ -4,23 +4,24 @@ require "joven/routing/router"
 
 module Joven
   class Application
+    attr_reader :routes
+ 
+    def initialize
+      @routes = Routing::Router.new
+    end
+ 
     def call(env)
       @request = Rack::Request.new(env)
-      path = @request.path_info
-      request_method = @request.request_method.downcase
-      return [500, {}, []] if path == "/favicon.ico"
-      controller, action = get_controller_action(path, request_method)
-      response = controller.new.send(action)
-      [200, { "Content-Type" => "text/html" }, [response]]
+      route = mapper.map_to_route(@request)
+      if route
+        response = route.dispatch
+        return [200, { "Content-Type" => "text/html" }, [response]]
+      end
+      [404, {}, ["Route not found"]]
     end
-
-    def get_controller_action(path, verb)
-      _, controller_name, action_name = path.split("/")
-      require "#{controller_name.downcase}_controller.rb"
-      controller = Object.const_get("#{controller_name.capitalize!}Controller")
-      action = action_name.nil? ? verb : "#{verb}_#{action_name}"
-
-      [controller, action]
+ 
+    def mapper
+      @mapper ||= Routing::Mapper.new(routes.endpoints)
     end
   end
 end
