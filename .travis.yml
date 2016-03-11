@@ -5,4 +5,4 @@ before_install: gem install bundler -v 1.11.1
 script: bundle exec rake spec
 addons:
     code_climate:
-        repo_token: c40019d99eefbcb917305ae1a4506308b0b4e6e25ff96e2406514d044d25159e bundle exec rake spec
+        repo_token: 525fe0d29fe351d908e978933a59fca0699aa6f14d0d5ae83c1c07b6f6c96a68 bundle exec rake spec

@@ -4,3 +4,4 @@ source "https://rubygems.org"
 gemspec
 
 gem "rubocop", require: false
+gem "codeclimate-test-reporter", group: :test, require: nil
