@@ -12,7 +12,7 @@ module Joven
       end
  
       def dispatch
-        klass.new(request).send(method_name)
+        klass.action method_name
       end
     end
   end

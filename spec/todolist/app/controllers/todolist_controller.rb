@@ -1,6 +1,6 @@
 class TodolistController < Joven::BaseController
   def index
-    "['Create application', 'Do KBBs', 'Homestudy revamp', 'Buy a phone']"
+    @name = "['Create application', 'Do KBBs', 'Homestudy revamp', 'Buy a phone']"
   end
 
   def show
