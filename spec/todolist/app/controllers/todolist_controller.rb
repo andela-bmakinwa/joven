@@ -10,7 +10,7 @@ class TodolistController < Joven::BaseController
 
   def show
     @todos = Todo.all
-    @todo = Todo.find(1)
+    @todo = Todo.find(2)
   end
 
   def create

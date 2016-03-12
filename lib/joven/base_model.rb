@@ -45,6 +45,10 @@ module Joven
       map_row_to_object row
     end
 
+    def self.destroy(id)
+      @@db.execute "DELETE FROM #{@@table_name} WHERE id = ?", id
+    end
+
     def destroy
       @@db.execute "DELETE FROM #{@@table_name} WHERE id = ?", @id
     end
