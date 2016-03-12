@@ -1,10 +1,10 @@
 TodoApplication.routes.draw do
-  get "/todo", to: "custom#index"
-  get "/todo/:id", to: "custom#show"
-  get "/todo/new", to: "custom#new"
-  get "/todo/:id/edit", to: "custom#edit"
-  post "/todo/:id", to: "custom#create"
-  put "/todo/:id", to: "custom#update"
-  patch "/todo/:id", to: "custom#update"
-  delete "/todo/:id", to: "custom#destroy"
+  get "/todos", to: "todolist#index"
+  get "/todo/:id", to: "todolist#show"
+  get "/todo/new", to: "todolist#new"
+  get "/todo/:id/edit", to: "todolist#edit"
+  post "/todos", to: "todolist#create"
+  put "/todo/:id", to: "todolist#update"
+  patch "/todo/:id", to: "todolist#update"
+  delete "/todo/:id", to: "todolist#destroy"
 end

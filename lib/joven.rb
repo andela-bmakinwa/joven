@@ -1,6 +1,8 @@
 require "joven/version"
 require "joven/utility"
 require "joven/routing/router"
+require "joven/routing/mapper"
+require "joven/routing/route"
 
 module Joven
   class Application

@@ -8,11 +8,11 @@ module Joven
       end
  
       def klass
-        klass_name.constantize
+        klass_name.to_constant
       end
  
       def dispatch
-        klass.new(request).send(method_name)
+        klass.new.send(method_name)
       end
     end
   end

@@ -1,0 +1,19 @@
+PATH
+  remote: ../../../joven
+  specs:
+    joven (0.1.0)
+      rack (~> 1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rack (1.6.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  joven!
+
+BUNDLED WITH
+   1.11.1

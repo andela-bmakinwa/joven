@@ -1,14 +1,20 @@
 require "spec_helper"
+require "todolist_controller"
+
+TodoApplication = Todolist::Application.new
 
 describe "Todolist App" do
   include Rack::Test::Methods
 
+  TodoApplication = Todolist::Application.new
+
   def app
-    Todolist::Application.new
+    require "todolist/config/routes.rb"
+    TodoApplication
   end
 
   it "returns a list of all my todos" do
-    get "/todolist"
+    get "/todos"
     expect(last_response).to be_ok
     expect(last_response.body).to eq(
       "['Create application', 'Do KBBs', 'Homestudy revamp', 'Buy a phone']"
@@ -16,25 +22,25 @@ describe "Todolist App" do
   end
 
   it "returns first item in my todolist" do
-    get "/todolist/first"
+    get "/todo/first"
     expect(last_response).to be_ok
     expect(last_response.body).to eq("Create application")
   end
 
   it "can respond to post request" do
-    post "/todolist"
+    post "/todos"
     expect(last_response).to be_ok
     expect(last_response.body).to eq("Post go swimming")
   end
 
   it "can respond to put request" do
-    put "/todolist"
+    put "/todo/2"
     expect(last_response).to be_ok
     expect(last_response.body).to eq("Put Create application")
   end
 
   it "can respond to delete request" do
-    delete "/todolist"
+    delete "/todo/3"
     expect(last_response).to be_ok
     expect(last_response.body).to eq("Delete Create application")
   end
@@ -45,3 +51,4 @@ describe Joven do
     expect(Joven::VERSION).not_to be nil
   end
 end
+  

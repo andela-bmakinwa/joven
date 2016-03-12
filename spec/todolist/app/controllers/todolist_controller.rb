@@ -1,21 +1,21 @@
 class TodolistController
-  def get
+  def index
     "['Create application', 'Do KBBs', 'Homestudy revamp', 'Buy a phone']"
   end
 
-  def get_first
+  def show
     "Create application"
   end
 
-  def post
+  def create
     "Post go swimming"
   end
 
-  def put
+  def update
     "Put Create application"
   end
 
-  def delete
+  def destroy
     "Delete Create application"
   end
 end
