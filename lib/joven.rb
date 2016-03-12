@@ -1,5 +1,6 @@
 require "joven/version"
 require "joven/utility"
+require "joven/base_controller"
 require "joven/routing/router"
 require "joven/routing/mapper"
 require "joven/routing/route"
@@ -13,6 +14,10 @@ module Joven
     end
  
     def call(env)
+      if env["PATH_INFO"] == "/favicon.ico"
+        return [500, {}, []]
+      end
+
       @request = Rack::Request.new(env)
       route = mapper.map_to_route(@request)
       if route

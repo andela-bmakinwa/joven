@@ -2,12 +2,16 @@ PATH
   remote: ../../../joven
   specs:
     joven (0.1.0)
+      erubis
       rack (~> 1.0)
+      tilt
 
 GEM
   remote: https://rubygems.org/
   specs:
+    erubis (2.7.0)
     rack (1.6.4)
+    tilt (2.0.2)
 
 PLATFORMS
   ruby
