@@ -51,4 +51,3 @@ describe Joven do
     expect(Joven::VERSION).not_to be nil
   end
 end
-  

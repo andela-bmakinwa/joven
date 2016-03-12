@@ -6,11 +6,11 @@ module Joven
         @klass_name, @method_name = klass_and_method
         @request = request
       end
- 
+
       def klass
         klass_name.to_constant
       end
- 
+
       def dispatch
         klass.action method_name
       end

@@ -1,6 +1,7 @@
 require "joven/version"
 require "joven/utility"
 require "joven/base_controller"
+require "joven/base_model"
 require "joven/routing/router"
 require "joven/routing/mapper"
 require "joven/routing/route"
@@ -8,11 +9,11 @@ require "joven/routing/route"
 module Joven
   class Application
     attr_reader :routes
- 
+
     def initialize
       @routes = Routing::Router.new
     end
- 
+
     def call(env)
       if env["PATH_INFO"] == "/favicon.ico"
         return [500, {}, []]
@@ -26,7 +27,7 @@ module Joven
       end
       [404, {}, ["Route not found"]]
     end
- 
+
     def mapper
       @mapper ||= Routing::Mapper.new(routes.endpoints)
     end

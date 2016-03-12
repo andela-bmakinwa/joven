@@ -1,4 +1,4 @@
-require "erubis"
+require "tilt/erb"
 
 module Joven
   class BaseController
@@ -26,15 +26,15 @@ module Joven
 
     def render_template(view_name, locals = {})
       filename = File.join("app", "views", controller_name, "#{view_name}.erb")
-      template = File.read(filename)
+      template = Tilt::ERBTemplate.new(filename)
       vars = {}
 
       instance_variables.each do |var|
         key = var.to_s.delete("@").to_sym
         vars[key] = instance_variable_get(var)
       end
-
-      Erubis::Eruby.new(template).result(locals.merge(vars))
+      template.render(controller_name, locals.merge(vars))
+      # Erubis::Eruby.new(template).result(locals.merge(vars))
     end
 
     def controller_name

@@ -14,9 +14,12 @@ module Joven
           match_path_with_pattern path, endpoint
         end
 
-        return Joven::Routing::Route.new(@request, result[:klass_and_method]) if result
+        return Joven::Routing::Route.new(
+          @request,
+          result[:klass_and_method]
+        ) if result
       end
- 
+
       def match_path_with_pattern(path, endpoint)
         regexp, placeholders = endpoint[:pattern]
         if path =~ regexp
