@@ -25,7 +25,7 @@ module Joven
     end
 
     def render_template(view_name, locals = {})
-      filename = File.join("app", "views", controller_name, "#{view_name}.erb")
+      filename = File.join(APP_ROOT,"app", "views", controller_name, "#{view_name}.erb")
       template = Tilt::ERBTemplate.new(filename)
       vars = {}
 
@@ -34,7 +34,6 @@ module Joven
         vars[key] = instance_variable_get(var)
       end
       template.render(controller_name, locals.merge(vars))
-      # Erubis::Eruby.new(template).result(locals.merge(vars))
     end
 
     def controller_name

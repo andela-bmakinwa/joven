@@ -1,7 +1,7 @@
 require "joven/helpers/model_helper"
 
 module Joven
-  class BaseModel
+  class BaseModel < Joven::ModelHelper
     def self.to_table(table_name)
       @@table_name = table_name.to_s
       @@model = Object.const_get(@@table_name[0...-1].capitalize)

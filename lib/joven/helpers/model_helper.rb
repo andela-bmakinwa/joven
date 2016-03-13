@@ -2,12 +2,10 @@ require "sqlite3"
 require "joven/helpers/database_helper"
 
 module Joven
-  class BaseModel
+  class ModelHelper
     extend Joven::DatabaseHelper
 
-    DB = Joven::DatabaseHelper
-
-    @@db = DB.connect
+    @@db ||= Joven::DatabaseHelper.connect
     @@table_name = ""
     @@model = nil
     @@mappings = {}

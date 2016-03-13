@@ -5,3 +5,4 @@ gemspec
 
 gem "rubocop", require: false
 gem "codeclimate-test-reporter", group: :test, require: nil
+gem "pry", group: :development
