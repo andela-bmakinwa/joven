@@ -20,6 +20,7 @@ module Joven
         regexp = path.gsub(/(:\w+)/) do |match|
           placeholders << match[1..-1].freeze
           "(?<#{placeholders.last}>[^/?#]+)"
+          #"(?<#{placeholders.last}>[A-Za-z0-9_]+)"
         end
 
         [/^#{regexp}$/, placeholders]
@@ -27,7 +28,7 @@ module Joven
 
       def controller_and_action(path_to)
         controller_path, action = path_to.split("#")
-        controller = "#{controller_path.capitalize}Controller"
+        controller = "#{controller_path.to_camel_case}Controller"
         [controller, action.to_sym]
       end
 

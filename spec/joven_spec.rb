@@ -1,5 +1,5 @@
 require "spec_helper"
-require "pry"
+
 APP_ROOT ||= __dir__ + "/todolist"
 
 describe Joven do

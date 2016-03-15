@@ -1,5 +1,6 @@
 require "joven/version"
 require "joven/utility"
+require "joven/dependencies"
 require "joven/base_controller"
 require "joven/base_model"
 require "joven/routing/router"
