@@ -150,7 +150,7 @@ describe "Blog App" do
       delete "/posts/#{post[:id]}"
 
       assert_status_and_response 404
-      expect(last_response.body.include?("#{post[:id]}")).to eq false
+      expect(last_response.body.include?((post[:id]).to_s)).to eq false
     end
   end
 end
