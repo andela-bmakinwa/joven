@@ -30,3 +30,14 @@ class String
     self
   end
 end
+
+class MethodOverride
+  def self.parse_env(env)
+    request = Rack::Request.new(env)
+    if request.params["_method"]
+      env["REQUEST_METHOD"] = request.params["_method"].upcase
+    end
+
+    env
+  end
+end

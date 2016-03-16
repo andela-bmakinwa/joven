@@ -25,7 +25,9 @@ module Joven
     end
 
     def render_template(view_name, locals = {})
-      filename = File.join(APP_ROOT,"app", "views", controller_name, "#{view_name}.erb")
+      filename = File.join(APP_ROOT, "app", "views",
+                           controller_name, "#{view_name}.erb")
+
       template = Tilt::ERBTemplate.new(filename)
       vars = {}
 
@@ -36,13 +38,23 @@ module Joven
       template.render(controller_name, locals.merge(vars))
     end
 
+    def redirect_to(action)
+      send action
+      render action
+    end
+
+    def get_route_from_action(action)
+      action = action == :index ? "" : "/#{action}"
+      "/#{controller_name}#{action}"
+    end
+
     def controller_name
       self.class.to_s.gsub(/Controller$/, "").to_snake_case
     end
 
     def dispatch(action_name)
       send action_name
-  
+
       unless get_response
         render action_name
       end
