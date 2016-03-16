@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/andela-bmakinwa/joven/badges/gpa.svg)](https://codeclimate.com/github/andela-bmakinwa/joven) [![Test Coverage](https://codeclimate.com/github/andela-bmakinwa/joven/badges/coverage.svg)](https://codeclimate.com/github/andela-bmakinwa/joven/coverage) [![Build Status](https://travis-ci.org/andela-bmakinwa/joven.svg?branch=master)](https://travis-ci.org/andela-bmakinwa/joven)
+[![Code Climate](https://codeclimate.com/github/andela-bmakinwa/joven/badges/gpa.svg)](https://codeclimate.com/github/andela-bmakinwa/joven) [![Test Coverage](https://codeclimate.com/github/andela-bmakinwa/joven/badges/coverage.svg)](https://codeclimate.com/github/andela-bmakinwa/joven/coverage) [![Build Status](https://semaphoreci.com/api/v1/makinwa37/joven/branches/master/badge.svg)](https://semaphoreci.com/makinwa37/joven)
 # Joven
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/joven`. To experiment with that code, run `bin/console` for an interactive prompt.
