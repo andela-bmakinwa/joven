@@ -26,7 +26,6 @@ module Joven
 
       if route
         response = route.dispatch.call(env)
-        p response
         return [200, { "Content-Type" => "text/html" }, response]
       end
 

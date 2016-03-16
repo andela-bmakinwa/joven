@@ -10,16 +10,16 @@ class TodolistController < Joven::BaseController
 
   def create
     @name = "Create something"
-    render :index
+    redirect_to :index
   end
 
   def update
     @name = "Update something"
-    render :index
+    redirect_to :index
   end
 
   def destroy
     @name = "Destroy something"
-    render :index
+    redirect_to :index
   end
 end
