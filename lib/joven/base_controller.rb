@@ -42,7 +42,7 @@ module Joven
 
     def dispatch(action_name)
       send action_name
-
+  
       unless get_response
         render action_name
       end

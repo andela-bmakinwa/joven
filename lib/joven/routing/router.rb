@@ -20,7 +20,6 @@ module Joven
         regexp = path.gsub(/(:\w+)/) do |match|
           placeholders << match[1..-1].freeze
           "(?<#{placeholders.last}>[^/?#]+)"
-          #"(?<#{placeholders.last}>[A-Za-z0-9_]+)"
         end
 
         [/^#{regexp}$/, placeholders]
